@@ -1,9 +1,33 @@
-import './App.css';
+import Header from './components/Header';
+
+import './App.scss';
+
 
 function App() {
   return (
     <>
-      Hello World
+      <Header/>
+      <div className='container'>
+        <div className='d-flex expense-container'>
+          <div className='expense__form'>
+            
+            <form>
+              <label>
+                <div className='input-label'>Title</div>
+                <input className='input' type='text' placeholder='Enter title'/>
+              </label>
+              <label>
+                <div className='input-label'>Amount</div>
+                <input className='input' type='text' placeholder='Enter amount'/>
+              </label>
+              <button className='fullwidth bold'>Add transaction</button>
+            </form>
+          </div>
+          <div className='expense__history'>
+            
+          </div>
+        </div>
+      </div>
     </>
   );
 }

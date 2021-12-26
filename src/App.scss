@@ -1,0 +1,62 @@
+@import './reset.scss';
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.fullwidth {
+    width: 100%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.input {
+    border: 1px solid #cccccc;
+    padding: 0 10px;
+    height: 45px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.input-label {
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.expense-container {
+    & > div {
+        flex: 1;
+        margin: 0 6px;
+    }
+
+    .expense__form {
+        form {
+            max-width: 420px;
+
+            label {
+                margin-bottom: 22px;
+                display: block;
+            }
+
+            button {
+                display: block;
+                border-radius: 6px;
+                background-color: red;
+                color: #fff;
+                text-align: center;
+                padding: 0 6px;
+                height: 45px;
+                line-height: 45px;
+                font-size: 1em;
+            }
+        }
+    }
+}

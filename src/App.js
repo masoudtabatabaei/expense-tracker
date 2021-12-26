@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import Balance from './components/Balance';
+import IncomeExpenses from './components/IncomeExpenses';
 
 import './App.scss';
 
@@ -12,6 +13,7 @@ function App() {
         <div className='d-flex expense-container'>
           <div className='expense__form'>
             <Balance/>
+            <IncomeExpenses/>
             <form>
               <label>
                 <div className='input-label'>Title</div>
@@ -25,7 +27,7 @@ function App() {
             </form>
           </div>
           <div className='expense__history'>
-
+            ddd
           </div>
         </div>
       </div>

@@ -35,11 +35,15 @@
   & > div {
     flex: 1;
     margin: 0 6px;
+
+    &:first-child {
+        flex: 0 0 40%;
+    }
   }
 
   .expense__form {
     form {
-      max-width: 420px;
+    //   max-width: 420px;
 
       label {
         margin-bottom: 22px;
@@ -79,6 +83,42 @@
             font-size: 1.4em;
         }
     }
+}
 
+.income-expense-box {
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px #cccccc;
+    margin-bottom: 18px;
+    border-radius: 8px;
 
+    .income , .expense {
+        font-size: 20px;
+
+        & > div:first-child {
+            font-size: 0.7em;
+            margin-bottom: 8px;
+        }
+    }
+
+    .income--value {
+        font-size: 1.1em;
+        color: #06bd06;
+    }
+
+    .expense--value {
+        font-size: 1.1em;
+        color: #ec1708;
+    }
+
+    & > div {
+        min-width: 150px;
+        text-align: center;
+        font-size: 20px;
+
+        &:first-child {
+            border-right: 2px solid #dddddd;
+        }
+    }
 }

@@ -22,7 +22,7 @@ const AddTransaction = () => {
           <div className="input-label">Amount</div>
           <input
             className="input"
-            type="text"
+            type="number"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             placeholder="Enter amount"

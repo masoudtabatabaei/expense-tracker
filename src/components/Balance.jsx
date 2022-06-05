@@ -1,11 +1,11 @@
 import React from "react";
 
-const Balance = () => {
+const Balance = ({ balanceVal }) => {
   return (
-    <div className='balance'>
+    <div className="balance">
       <div>Your Balance</div>
       <div className="bold">
-        <span>$</span>&nbsp;<span>258.00</span>
+        <span>$</span>&nbsp;<span>{balanceVal}</span>
       </div>
     </div>
   );

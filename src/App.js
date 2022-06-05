@@ -7,15 +7,20 @@ import AddTransaction from "./components/AddTransaction";
 import "./App.scss";
 
 function App() {
+  // on submit form
+  const onSubmit = (inputs) => {
+    console.log("--- Submit form ----", inputs);
+  };
+
   return (
     <>
       <div className="container">
-      <Header />
+        <Header />
         <Balance />
         <div className="d-flex expense-container">
           <div className="expense__entry">
             <IncomeExpenses />
-            <AddTransaction/>
+            <AddTransaction handleSubmit={onSubmit} />
           </div>
           <TransactionList />
         </div>

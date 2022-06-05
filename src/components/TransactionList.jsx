@@ -1,29 +1,29 @@
 import React from "react";
 import DeleteIcon from "../assets/img/delete.svg";
 
-const TransactionList = () => {
+const TransactionList = ({ transactions }) => {
   return (
     <div className="expense__history">
       <div className="header-title">History</div>
       <div className="inc-exp-items-container">
-        <div className="d-flex inc-item">
-          <div className="d-flex item--title">
-            <a>
-              <img src={DeleteIcon} />
-            </a>
-            <h4>Carwash</h4>
-          </div>
-          <div className="bold">+$6.00</div>
-        </div>
-        <div className="d-flex exp-item">
-          <div className="d-flex item--title">
-            <a>
-              <img src={DeleteIcon} />
-            </a>
-            <h4>Transfer</h4>
-          </div>
-          <div className="bold">-$6.00</div>
-        </div>
+        {transactions.map((transaction) => {
+          let transactionTypeClass =
+            transaction.amount < 0 ? "exp-item" : "inc-item";
+          return (
+            <div
+              key={new Date().getTime() + Math.random()}
+              className={"d-flex " + transactionTypeClass}
+            >
+              <div className="d-flex item--title">
+                <a>
+                  <img src={DeleteIcon} />
+                </a>
+                <h4>{transaction.title}</h4>
+              </div>
+              <div className="bold">${transaction.amount}</div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

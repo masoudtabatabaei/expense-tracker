@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "./components/Header";
 import Balance from "./components/Balance";
 import IncomeExpenses from "./components/IncomeExpenses";
@@ -7,9 +8,19 @@ import AddTransaction from "./components/AddTransaction";
 import "./App.scss";
 
 function App() {
+  const [transactions, setTransactions] = useState([
+    {
+      title: "Carwash",
+      amount: -6,
+    },
+    {
+      title: "Transfer",
+      amount: 12,
+    },
+  ]);
   // on submit form
   const onSubmit = (inputs) => {
-    console.log("--- Submit form ----", inputs);
+    setTransactions((prevTransactions) => [...prevTransactions, inputs]);
   };
 
   return (
@@ -22,7 +33,7 @@ function App() {
             <IncomeExpenses />
             <AddTransaction handleSubmit={onSubmit} />
           </div>
-          <TransactionList />
+          <TransactionList transactions={transactions} />
         </div>
       </div>
     </>

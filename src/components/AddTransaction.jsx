@@ -27,6 +27,10 @@ const AddTransaction = ({ handleSubmit }) => {
     }
 
     handleSubmit(inputs);
+    setInputs({
+      title: "",
+      amount: "",
+    });
   };
 
   return (
@@ -50,7 +54,7 @@ const AddTransaction = ({ handleSubmit }) => {
             name="amount"
             className="input"
             type="number"
-            value={inputs.amount || 0}
+            value={inputs.amount || ""}
             onChange={handleChange}
             placeholder="Enter amount"
           />

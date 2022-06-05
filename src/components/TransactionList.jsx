@@ -1,7 +1,7 @@
 import React from "react";
 import DeleteIcon from "../assets/img/delete.svg";
 
-const TransactionList = ({ transactions }) => {
+const TransactionList = ({ transactions, handleDelete }) => {
   return (
     <div className="expense__history">
       <div className="header-title">History</div>
@@ -15,7 +15,7 @@ const TransactionList = ({ transactions }) => {
               className={"d-flex " + transactionTypeClass}
             >
               <div className="d-flex item--title">
-                <a>
+                <a onClick={() => handleDelete(transaction.id)}>
                   <img src={DeleteIcon} />
                 </a>
                 <h4>{transaction.title}</h4>

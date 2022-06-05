@@ -8,30 +8,34 @@ import AddTransaction from "./components/AddTransaction";
 import "./App.scss";
 
 function App() {
-  const [transactions, setTransactions] = useState([
-    {
-      id: 1,
-      title: "Carwash",
-      amount: -6,
-    },
-    {
-      id: 2,
-      title: "Transfer",
-      amount: 120,
-    },
-  ]);
+  const [transactions, setTransactions] = useState([]);
   const [balanceVal, setBalanceVal] = useState(
     transactions.reduce((acc, obj) => {
       return acc + obj.amount;
     }, 0)
   );
+  const [incomeExpenseVal, setIncomeExpenseVal] = useState({
+    income: 0,
+    expense: 0,
+  });
 
   // on submit form
   const onSubmit = (inputs) => {
     const newItem = {
       ...inputs,
-      id: transactions[transactions.length - 1].id + 1,
+      id: transactions[transactions.length - 1]?.id + 1,
     };
+
+    +inputs.amount < 0
+      ? setIncomeExpenseVal((values) => ({
+          ...values,
+          expense: values.expense + +inputs.amount,
+        }))
+      : setIncomeExpenseVal((values) => ({
+          ...values,
+          income: values.income + +inputs.amount,
+        }));
+
     setTransactions((prevTransactions) => [...prevTransactions, newItem]);
     setBalanceVal((preveBalance) => preveBalance + +newItem.amount);
   };
@@ -48,7 +52,7 @@ function App() {
         <Balance balanceVal={balanceVal} />
         <div className="d-flex expense-container">
           <div className="expense__entry">
-            <IncomeExpenses />
+            <IncomeExpenses incomeExpenseVal={incomeExpenseVal} />
             <AddTransaction handleSubmit={onSubmit} />
           </div>
           <TransactionList

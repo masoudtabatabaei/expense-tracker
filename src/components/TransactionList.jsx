@@ -15,7 +15,7 @@ const TransactionList = ({ transactions, handleDelete }) => {
               className={"d-flex " + transactionTypeClass}
             >
               <div className="d-flex item--title">
-                <a onClick={() => handleDelete(transaction.id)}>
+                <a onClick={() => handleDelete(transaction)}>
                   <img src={DeleteIcon} />
                 </a>
                 <h4>{transaction.title}</h4>

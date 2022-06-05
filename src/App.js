@@ -21,9 +21,13 @@ function App() {
 
   // on submit form
   const onSubmit = (inputs) => {
+    const newID =
+      transactions.length > 0
+        ? transactions[transactions.length - 1].id + 1
+        : 1;
     const newItem = {
       ...inputs,
-      id: transactions[transactions.length - 1]?.id + 1,
+      id: newID,
     };
 
     +inputs.amount < 0
@@ -41,8 +45,21 @@ function App() {
   };
 
   //handle delete item
-  const handleDelete = (id) => {
-    console.log("id: " + id);
+  const handleDelete = (item) => {
+    const filtered = [...transactions].filter(
+      (transaction) => transaction.id != item.id
+    );
+    setBalanceVal((preveBalance) => preveBalance - +item.amount);
+    +item.amount < 0
+      ? setIncomeExpenseVal((values) => ({
+          ...values,
+          expense: values.expense - +item.amount,
+        }))
+      : setIncomeExpenseVal((values) => ({
+          ...values,
+          income: values.income - +item.amount,
+        }));
+    setTransactions(filtered);
   };
 
   return (

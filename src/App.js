@@ -1,3 +1,4 @@
+import React, { Component } from "react";
 import { useState } from "react";
 import Header from "./components/Header";
 import Balance from "./components/Balance";
@@ -70,7 +71,7 @@ function App() {
         <div className="d-flex expense-container">
           <div className="expense__entry">
             <IncomeExpenses incomeExpenseVal={incomeExpenseVal} />
-            <AddTransaction handleSubmit={onSubmit} />
+            <AddTransaction handleSubmitForm={onSubmit} />
           </div>
           <TransactionList
             transactions={transactions}

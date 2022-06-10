@@ -1,5 +1,5 @@
 import React from "react";
-import DeleteIcon from "../assets/img/delete.svg";
+import DeleteIcon from "../assets/img/delete.png";
 
 const TransactionList = ({ transactions, handleDelete }) => {
   return (

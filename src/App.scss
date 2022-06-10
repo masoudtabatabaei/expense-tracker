@@ -138,11 +138,15 @@
 }
 
 .inc-exp-items-container {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 8px;
+
   & > div {
     height: 50px;
     padding: 0 15px 0 5px;
     border: 1px solid #dddddd;
-    border-radius: 6px;
+    border-radius:  0 6px 6px 0;
     overflow: hidden;
     position: relative;
     justify-content: space-between;
@@ -163,9 +167,9 @@
 
       img {
         width: 25px;
-        margin-right: 4px;
+        margin-right: 8px;
         vertical-align: middle;
-        opacity: 0.4;
+        opacity: 0.8;
       }
     }
 
@@ -177,10 +181,4 @@
       background-color: #ec1708;
     }
   }
-}
-
-.inc-exp-items-container {
-  max-height: 400px;
-  overflow-y: auto;
-  padding-right: 8px;
 }

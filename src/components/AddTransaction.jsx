@@ -68,6 +68,9 @@ const AddTransaction = ({ handleSubmitForm }) => {
         {errors.amount && <div className="error_msg">Amount is required!</div>}
         <button className="fullwidth bold">Add transaction</button>
       </form>
+      <div className="github">
+        <a href="https://github.com/masoudtabatabaei">My Github</a>
+      </div>
     </>
   );
 };

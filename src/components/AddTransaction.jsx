@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import GithubIcon from "../assets/img/github.png";
 
 const AddTransaction = ({ handleSubmitForm }) => {
   const [inputs, setInputs] = useState({});
@@ -69,7 +70,9 @@ const AddTransaction = ({ handleSubmitForm }) => {
         <button className="fullwidth bold">Add transaction</button>
       </form>
       <div className="github">
-        <a href="https://github.com/masoudtabatabaei">My Github</a>
+        <a href="https://github.com/masoudtabatabaei">
+          <img src={GithubIcon} alt="my github link" />
+        </a>
       </div>
     </>
   );

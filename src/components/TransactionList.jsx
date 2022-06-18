@@ -1,5 +1,5 @@
 import React from "react";
-import DeleteIcon from "../assets/img/delete.png";
+import TransactionItem from "./TransactionItem";
 
 const TransactionList = ({ transactions, handleDelete }) => {
   return (
@@ -10,18 +10,11 @@ const TransactionList = ({ transactions, handleDelete }) => {
           let transactionTypeClass =
             transaction.amount < 0 ? "exp-item" : "inc-item";
           return (
-            <div
-              key={new Date().getTime() + Math.random()}
-              className={"d-flex " + transactionTypeClass}
-            >
-              <div className="d-flex item--title">
-                <a onClick={() => handleDelete(transaction)}>
-                  <img src={DeleteIcon} />
-                </a>
-                <h4>{transaction.title}</h4>
-              </div>
-              <div className="bold">${transaction.amount}</div>
-            </div>
+            <TransactionItem
+              transaction={transaction}
+              transactionTypeClass={transactionTypeClass}
+              handleDelete={handleDelete}
+            />
           );
         })}
       </div>

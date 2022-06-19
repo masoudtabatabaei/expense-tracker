@@ -11,6 +11,7 @@ const TransactionList = ({ transactions, handleDelete }) => {
             transaction.amount < 0 ? "exp-item" : "inc-item";
           return (
             <TransactionItem
+              key={transaction.id + Math.floor(Math.random())}
               transaction={transaction}
               transactionTypeClass={transactionTypeClass}
               handleDelete={handleDelete}

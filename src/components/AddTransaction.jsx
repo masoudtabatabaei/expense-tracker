@@ -10,12 +10,15 @@ const AddTransaction = ({ handleSubmitForm }) => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   // handleChange inputs
   const handleChange = (e) => {
+    console.log("--- handle change ----");
     const name = e.target.name;
     const value = e.target.value;
+    console.log(name, value);
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
@@ -33,6 +36,7 @@ const AddTransaction = ({ handleSubmitForm }) => {
     }
 
     data.amount = +data.amount;
+    reset({ title: "", amount: "" });
     handleSubmitForm(data);
   };
 

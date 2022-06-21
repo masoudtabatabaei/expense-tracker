@@ -13,15 +13,6 @@ const AddTransaction = ({ handleSubmitForm }) => {
     reset,
   } = useForm();
 
-  // handleChange inputs
-  const handleChange = (e) => {
-    console.log("--- handle change ----");
-    const name = e.target.name;
-    const value = e.target.value;
-    console.log(name, value);
-    setInputs((values) => ({ ...values, [name]: value }));
-  };
-
   // handle submit
   const onSubmit = (data) => {
     setHasError([false, ""]);
@@ -51,7 +42,6 @@ const AddTransaction = ({ handleSubmitForm }) => {
             className="input"
             type="text"
             value={inputs.title}
-            onChange={handleChange}
             placeholder="Enter title"
             {...register("title", { required: true, minLength: 1 })}
           />
@@ -64,7 +54,6 @@ const AddTransaction = ({ handleSubmitForm }) => {
             className="input"
             type="number"
             value={inputs.amount}
-            onChange={handleChange}
             placeholder="Enter amount"
             {...register("amount", { required: true })}
           />

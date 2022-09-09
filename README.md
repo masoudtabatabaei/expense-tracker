@@ -1,6 +1,5 @@
 # Expense Tracker using React
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Expense Tracker is a project that by use it you can register income and expense value to better control that developed by `ReactJs`
 
 ## Available Scripts
 
